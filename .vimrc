@@ -1,7 +1,8 @@
 "enable pathogen for plugins: https://github.com/tpope/vim-pathogen
 "ctrlp: https://github.com/kien/ctrlp.vim
+"fugitive: https://github.com/tpope/vim-fugitive
+"solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
-"todo: need to patch fonts & make this work completely
 execute pathogen#infect()
 
 set autoindent      "copy the indent from the previous line
@@ -25,11 +26,14 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-"desert colorscheme
-colorscheme desert
-
 "enable syntax highlighting
 syntax on
+
+"enable solarized dark and powerline symbols
+set background=dark
+let g:solarized_termcolors=16
+let g:airline_powerline_fonts = 1
+colorscheme solarized
 
 "turn filetype detection, indent scripts, and filetype plugins on
 filetype plugin indent on
