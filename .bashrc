@@ -13,6 +13,7 @@ __git_complete gco _git_checkout
 alias gco='git checkout'
 alias gl='git log --date=local'
 alias gs='git status'
+alias gd='git diff'
 alias gum="echo 'Resetting master to the latest origin/master...' && git fetch && git update-ref refs/heads/master origin/master"
 
 # set vim as the default editor

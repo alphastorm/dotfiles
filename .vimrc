@@ -31,10 +31,10 @@ set ttyfast         "improves redrawing
 set virtualedit=all "allow the cursor to roam beyond defined text
 set visualbell      "flash the screen instead of beeping
 
-"4 space tabs
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+"2 space tabs
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 "enable solarized dark and powerline symbols
@@ -81,7 +81,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 "change the 81st col to be light blue
-highlight ColorColumn ctermbg=4
+highlight ColorColumn ctermbg=gray
 
 "md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
