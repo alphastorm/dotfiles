@@ -39,7 +39,6 @@ set expandtab
 
 "enable solarized dark and powerline symbols
 set background=dark
-let g:solarized_termcolors=16
 let g:airline_powerline_fonts = 1
 colorscheme solarized
 
