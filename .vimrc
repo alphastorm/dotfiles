@@ -75,6 +75,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"make the j and k work better with wrapped text
+"if you hit j, it goes down a visual line, not a logical line
+noremap j gj
+noremap k gk
+
 "highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -82,9 +87,12 @@ match ExtraWhitespace /\s\+$/
 "change the 81st col to be light blue
 highlight ColorColumn ctermbg=gray
 
-"md is markdown
+".md files are markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
+
+".hql files are SQL
+autocmd BufRead,BufNewFile *.hql set filetype=sql
 
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
