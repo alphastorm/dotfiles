@@ -6,9 +6,13 @@ syntax on
 
 "enable pathogen for plugins: https://github.com/tpope/vim-pathogen
 "ctrlp: https://github.com/kien/ctrlp.vim
+"endwise-vim: https://github.com/tpope/vim-endwise
 "fugitive: https://github.com/tpope/vim-fugitive
 "solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
+"vim-autoclose: https://github.com/Townk/vim-autoclose
+"vim-gitgutter: https://github.com/airblade/vim-gitgutter
+"youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
 
 set autoindent      "copy the indent from the previous line
@@ -41,6 +45,9 @@ set expandtab
 set background=dark
 let g:airline_powerline_fonts = 1
 colorscheme solarized
+
+"clear background for vim-gitgutter
+highlight clear SignColumn
 
 "use the silver searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
