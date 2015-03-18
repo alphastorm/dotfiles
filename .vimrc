@@ -15,25 +15,26 @@ syntax on
 "youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
 
-set autoindent      "copy the indent from the previous line
-set autoread        "reload files when changed on disk, i.e. via `git checkout`
-set cc=81           "highlight the 81st column
-set directory-=.    "don't store swapfiles in the current directory
-set encoding=utf-8  "utf-8 encoding
-set expandtab       "insert spaces instead of tabs
-set ignorecase      "case-insensitive search
-set incsearch       "search as you type
-set laststatus=2    "always display the status line
-set nowrap          "disable wrapping
-set number          "line numbers
-set ruler           "displays the current cursor position
-set scrolloff=3     "2 lines at top/bottom of screen when scrolling
-set showcmd         "show the input of an incomplete command
-set showmatch       "jump the cursor on matching braces/parens/brackets
-set smartcase       "case-sensitive search if any caps
-set ttyfast         "improves redrawing
-set virtualedit=all "allow the cursor to roam beyond defined text
-set visualbell      "flash the screen instead of beeping
+set autoindent        "copy the indent from the previous line
+set autoread          "reload files when changed on disk, i.e. via git checkout
+set cc=81             "highlight the 81st column
+set clipboard=unnamed "add support for the Mac OS X clipboard
+set directory-=.      "don't store swapfiles in the current directory
+set encoding=utf-8    "utf-8 encoding
+set expandtab         "insert spaces instead of tabs
+set ignorecase        "case-insensitive search
+set incsearch         "search as you type
+set laststatus=2      "always display the status line
+set nowrap            "disable wrapping
+set number            "line numbers
+set ruler             "displays the current cursor position
+set scrolloff=3       "2 lines at top/bottom of screen when scrolling
+set showcmd           "show the input of an incomplete command
+set showmatch         "jump the cursor on matching braces/parens/brackets
+set smartcase         "case-sensitive search if any caps
+set ttyfast           "improves redrawing
+set virtualedit=all   "allow the cursor to roam beyond defined text
+set visualbell        "flash the screen instead of beeping
 
 "2 space tabs
 set tabstop=2
