@@ -8,12 +8,15 @@ syntax on
 "ctrlp: https://github.com/kien/ctrlp.vim
 "endwise-vim: https://github.com/tpope/vim-endwise
 "fugitive: https://github.com/tpope/vim-fugitive
+"nerdcommenter: https://github.com/scrooloose/nerdcommenter
 "solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
 "vim-autoclose: https://github.com/Townk/vim-autoclose
 "vim-gitgutter: https://github.com/airblade/vim-gitgutter
 "youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
+
+let mapleader = "\<Space>"
 
 set autoindent        "copy the indent from the previous line
 set autoread          "reload files when changed on disk, i.e. via git checkout
@@ -22,6 +25,9 @@ set clipboard=unnamed "add support for the Mac OS X clipboard
 set directory-=.      "don't store swapfiles in the current directory
 set encoding=utf-8    "utf-8 encoding
 set expandtab         "insert spaces instead of tabs
+set gdefault          "applies substitutions globally on lines
+set hidden            "hides buffers instead of closing them
+set hlsearch          "highlight all search matches
 set ignorecase        "case-insensitive search
 set incsearch         "search as you type
 set laststatus=2      "always display the status line
@@ -92,7 +98,7 @@ noremap k gk
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-"change the 81st col to be light blue
+"change the 81st col to be gray
 highlight ColorColumn ctermbg=gray
 
 ".md files are markdown
