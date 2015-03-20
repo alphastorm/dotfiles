@@ -5,18 +5,17 @@ set nocompatible
 syntax on
 
 "enable pathogen for plugins: https://github.com/tpope/vim-pathogen
-"ctrlp: https://github.com/kien/ctrlp.vim
+"ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 "endwise-vim: https://github.com/tpope/vim-endwise
 "fugitive: https://github.com/tpope/vim-fugitive
 "nerdcommenter: https://github.com/scrooloose/nerdcommenter
+"nerdtree: https://github.com/scrooloose/nerdtree
 "solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
 "vim-autoclose: https://github.com/Townk/vim-autoclose
 "vim-gitgutter: https://github.com/airblade/vim-gitgutter
 "youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
-
-let mapleader = "\<Space>"
 
 set autoindent        "copy the indent from the previous line
 set autoread          "reload files when changed on disk, i.e. via git checkout
@@ -50,23 +49,38 @@ set expandtab
 
 "enable solarized dark and powerline symbols
 set background=dark
-let g:airline_powerline_fonts = 1
 colorscheme solarized
+let g:airline_powerline_fonts = 1
 
 "clear background for vim-gitgutter
 highlight clear SignColumn
 
-"use the silver searcher https://github.com/ggreer/the_silver_searcher
+"use the silver searcher: https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   "use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   "use ag in ctrlp for listing files. lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore .git -g ""'
 endif
+
+"use ctrl-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
+if !has('python')
+  echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+
+"don't clear cache on exit and update search only after 250ms
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_lazy_update = 1
 
 "turn filetype detection, indent scripts, and filetype plugins on
 filetype plugin indent on
+
+"leader key mappings
+let mapleader = "\<Space>"
+map <leader>t :NERDTreeToggle<CR>
 
 "disable arrow keys
 nnoremap <up> <nop>
