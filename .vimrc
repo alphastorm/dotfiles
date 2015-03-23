@@ -81,6 +81,7 @@ filetype plugin indent on
 "leader key mappings
 let mapleader = "\<Space>"
 map <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
 
 "disable arrow keys
 nnoremap <up> <nop>
