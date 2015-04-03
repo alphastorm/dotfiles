@@ -125,3 +125,6 @@ autocmd BufRead,BufNewFile *.hql set filetype=sql
 
 "automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+"prefer 2 space indent for python over PEP8
+autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
