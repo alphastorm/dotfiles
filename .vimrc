@@ -71,8 +71,7 @@ else
   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 endif
 
-"don't clear cache on exit and update search only after 250ms
-let g:ctrlp_clear_cache_on_exit = 0
+"only update the match window for ctrlp after 250ms
 let g:ctrlp_lazy_update = 1
 
 "turn filetype detection, indent scripts, and filetype plugins on
