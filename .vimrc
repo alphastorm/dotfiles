@@ -10,10 +10,12 @@ syntax on
 "fugitive: https://github.com/tpope/vim-fugitive
 "nerdcommenter: https://github.com/scrooloose/nerdcommenter
 "nerdtree: https://github.com/scrooloose/nerdtree
+"promptline: https://github.com/edkolev/promptline.vim
 "solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
 "vim-autoclose: https://github.com/Townk/vim-autoclose
 "vim-gitgutter: https://github.com/airblade/vim-gitgutter
+"virtualenv.vim: https://github.com/jmcantrell/vim-virtualenv
 "youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
 
@@ -47,14 +49,28 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-"enable solarized dark and powerline symbols
+"enable solarized dark
 set background=dark
 colorscheme solarized
+
+"powerline settings
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#virtualenv#enabled = 1
+
+"promptline settings
+let g:promptline_preset = {
+  \'a' : [ '$(date +"%Y-%m-%d %H:%M:%S")'],
+  \'b' : [ promptline#slices#cwd() ],
+  \'c' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
+  \'y' : [ promptline#slices#python_virtualenv() ],
+  \'warn' : [ promptline#slices#last_exit_code() ]}
 
 "close the ycm preview window after insertion or completion
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+"autoload virtualenvs
+let g:virtualenv_auto_activate = 1
 
 "clear background for vim-gitgutter
 highlight clear SignColumn
@@ -85,6 +101,7 @@ filetype plugin indent on
 let mapleader = "\<Space>"
 map <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
+nnoremap <leader>h :noh<CR>
 
 "disable arrow keys
 nnoremap <up> <nop>

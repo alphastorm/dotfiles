@@ -1,6 +1,9 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# set up promptline.vim:
+. ~/.shell_prompt.sh
+
 # set up z: https://github.com/rupa/z
 . ~/.z.sh
 
@@ -42,14 +45,5 @@ export CLICOLOR='1'
 
 alias ls='ls -G'  # the -G command in OSX is for colors, in Linux it's no groups
 export LSCOLORS="gxDxFxdxCxExExhbadgxgx"
-
-# custom colors and prompt statements
-export COLOR_LIGHT_CYAN='\e[1;36m'
-export COLOR_LIGHT_GRAY='\e[0;37m'
-export COLOR_NC='\e[0m' # No Color
-export PS1="[\D{%T}] \[${COLOR_LIGHT_GRAY}\]\w\[${COLOR_NC}\]\[${COLOR_LIGHT_CYAN}\]\$(__git_ps1 \" %s\")\[${COLOR_NC}\] "
-export PS2='> '
-export PS3='#? '
-export PS4='+ '
 
 source /home/users/sunil/Development/relcy/tools/install-tools
