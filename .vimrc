@@ -52,6 +52,10 @@ set background=dark
 colorscheme solarized
 let g:airline_powerline_fonts = 1
 
+"close the ycm preview window after insertion or completion
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 "clear background for vim-gitgutter
 highlight clear SignColumn
 
