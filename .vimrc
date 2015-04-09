@@ -103,6 +103,10 @@ map <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
 nnoremap <leader>h :noh<CR>
 
+"leader+r run hotkey inspired by https://alisnic.github.io/posts/vim-run-hotkey/
+nnoremap <leader>r :!%:p<CR>
+autocmd FileType python nmap <leader>r :!python %<CR>
+
 "disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
