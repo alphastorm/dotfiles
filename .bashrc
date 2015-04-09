@@ -13,7 +13,6 @@
 __git_complete gco _git_checkout
 
 # git aliases
-alias gc='git stash && git stash clear'
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git log --date=local'
@@ -24,11 +23,7 @@ alias gum="echo 'Resetting master to the latest origin/master...' && git fetch &
 
 # server aliases
 alias aws8='ssh hduser@relcy-aws8'
-alias p0='ssh hduser@relcy-p0'
 alias r0='ssh hduser@relcy-r0'
-
-# misc aliases
-alias flushdns='sudo discoveryutil udnsflushcaches'
 
 # set vim as the default editor
 export EDITOR='vim'
