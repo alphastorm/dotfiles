@@ -15,6 +15,7 @@ syntax on
 "vim-airline: https://github.com/bling/vim-airline
 "vim-autoclose: https://github.com/Townk/vim-autoclose
 "vim-gitgutter: https://github.com/airblade/vim-gitgutter
+"vim-quickrun: https://github.com/thinca/vim-quickrun
 "virtualenv.vim: https://github.com/jmcantrell/vim-virtualenv
 "youcompleteme: https://github.com/Valloric/YouCompleteMe
 execute pathogen#infect()
@@ -100,12 +101,9 @@ filetype plugin indent on
 "leader key mappings
 let mapleader = "\<Space>"
 map <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
 nnoremap <leader>h :noh<CR>
-
-"leader+r run hotkey inspired by https://alisnic.github.io/posts/vim-run-hotkey/
-nnoremap <leader>r :!%:p<CR>
-autocmd FileType python nmap <leader>r :!python %<CR>
+nnoremap <leader>r :QuickRun<CR>
+nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
 
 "disable arrow keys
 nnoremap <up> <nop>
