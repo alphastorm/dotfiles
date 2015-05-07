@@ -8,6 +8,7 @@ syntax on
 "ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 "endwise-vim: https://github.com/tpope/vim-endwise
 "fugitive: https://github.com/tpope/vim-fugitive
+"indentLine: https://github.com/Yggdroot/indentLine
 "nerdcommenter: https://github.com/scrooloose/nerdcommenter
 "nerdtree: https://github.com/scrooloose/nerdtree
 "promptline: https://github.com/edkolev/promptline.vim
@@ -57,6 +58,9 @@ colorscheme solarized
 "powerline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#virtualenv#enabled = 1
+
+"indentline settings
+let g:indentLine_char = '¦'
 
 "promptline settings
 let g:promptline_preset = {
