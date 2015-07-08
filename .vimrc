@@ -64,8 +64,8 @@ let g:indentLine_char = '¦'
 
 "promptline settings
 let g:promptline_preset = {
-  \'a' : [ '$(date +"%Y-%m-%d %H:%M:%S")'],
-  \'b' : [ promptline#slices#cwd() ],
+  \'a' : [ '$(date +"%H:%M:%S")'],
+  \'b' : [ '\W' ],
   \'c' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
   \'y' : [ promptline#slices#python_virtualenv() ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
