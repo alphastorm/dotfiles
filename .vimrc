@@ -6,6 +6,7 @@ syntax on
 
 "enable pathogen for plugins: https://github.com/tpope/vim-pathogen
 "ctrlp: https://github.com/ctrlpvim/ctrlp.vim
+"delimitMate: https://github.com/Raimondi/delimitMate.git
 "endwise-vim: https://github.com/tpope/vim-endwise
 "fugitive: https://github.com/tpope/vim-fugitive
 "indentLine: https://github.com/Yggdroot/indentLine
@@ -14,7 +15,6 @@ syntax on
 "promptline: https://github.com/edkolev/promptline.vim
 "solarized: https://github.com/altercation/vim-colors-solarized
 "vim-airline: https://github.com/bling/vim-airline
-"vim-autoclose: https://github.com/Townk/vim-autoclose
 "vim-gitgutter: https://github.com/airblade/vim-gitgutter
 "vim-quickrun: https://github.com/thinca/vim-quickrun
 "virtualenv.vim: https://github.com/jmcantrell/vim-virtualenv
