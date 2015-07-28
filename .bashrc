@@ -1,7 +1,9 @@
+# This is Sunil Srivatsa's .bashrc file
+
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# set up promptline.vim:
+# set up promptline.vim
 . ~/.shell_prompt.sh
 
 # set up z: https://github.com/rupa/z
@@ -9,11 +11,11 @@
 
 # git autocompletion
 . ~/.git-completion.bash
-. ~/.git-prompt.sh
 __git_complete gco _git_checkout
 
 # git aliases
 alias gaa='git add --all'
+alias gc='git commit --verbose'
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git l'
@@ -45,4 +47,5 @@ export CLICOLOR='1'
 alias ls='ls -G'  # the -G command in OSX is for colors, in Linux it's no groups
 export LSCOLORS="gxDxFxdxCxExExhbadgxgx"
 
-source /home/users/sunil/Development/relcy/tools/install-tools
+# append to the history file when exiting instead of overwriting it
+shopt -s histappend
