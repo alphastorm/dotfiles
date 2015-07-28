@@ -16,6 +16,7 @@ __git_complete gco _git_checkout
 # git aliases
 alias gaa='git add --all'
 alias gc='git commit --verbose'
+alias gca='git commit --amend --verbose'
 alias gco='git checkout'
 alias gd='git diff'
 alias gl='git l'
