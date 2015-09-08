@@ -119,10 +119,10 @@ let g:airline_powerline_fonts = 1
 let g:indentLine_char = '¦'
 
 let g:promptline_preset = {
-  \'a' : [ '$(date +"%H:%M:%S")'],
-  \'b' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
-  \'c' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
-  \'y' : [ promptline#slices#python_virtualenv() ],
+  \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
+  \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
+  \'c' : [ promptline#slices#python_virtualenv() ],
+  \'x' : [ '$(date +"%H:%M:%S")'],
   \'warn' : [ promptline#slices#last_exit_code() ]}
 
 " close the ycm preview window after insertion or completion
@@ -166,3 +166,19 @@ autocmd VimResized * :wincmd =
 
 " prefer 2 space indent for python over PEP8
 autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STRIP TRAILING WHITESPACE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! <SID>StripTrailingWhitespaces()
+  " preparation: save last search, and cursor position
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " do the business
+  %s/\s\+$//e
+  " clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
