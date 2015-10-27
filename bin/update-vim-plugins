@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Script to pull the latest versions of all installed vim pathogen plugins
+
+cd ~/.vim/bundle
+
+for plugin in `find . -maxdepth 1 -mindepth 1 -type d`; do
+  echo "> Updating ${plugin}"
+  cd "${plugin}"
+  git pull
+  cd ..
+done
