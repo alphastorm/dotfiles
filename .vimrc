@@ -39,6 +39,10 @@ set softtabstop=2
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
 
+" toggle paste for pasting unmodified text
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+set pastetoggle=<F6>
+
 set autoindent        " copy the indent from the previous line
 set autoread          " reload files when changed on disk, i.e. via git checkout
 set cc=81             " highlight the 81st column
@@ -81,6 +85,7 @@ highlight ColorColumn ctermbg=gray
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 nnoremap <leader><leader> <C-^>
+nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>r :QuickRun<CR>
 nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
