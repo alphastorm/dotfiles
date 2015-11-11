@@ -1,10 +1,6 @@
 # dotfiles
 
-my dotfiles.
-
-## font
-
-[Inconsolata-g for Powerline](https://github.com/powerline/fonts/tree/master/Inconsolata-g)
+my dotfiles and configuration stuff.
 
 ## colorscheme
 
@@ -13,3 +9,20 @@ my dotfiles.
 ## directory colors
 
 [dircolors-solarized](https://github.com/seebi/dircolors-solarized)
+
+## font
+
+[Inconsolata-g for Powerline](https://github.com/powerline/fonts/tree/master/Inconsolata-g)
+
+## homebrew
+
+[homebrew](http://brew.sh/)
+
+```
+csshx
+httpie
+macvim --with-override-system-vim
+the_silver_searcher
+wget
+zsh
+```
