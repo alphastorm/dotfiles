@@ -5,8 +5,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
 
-" ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 " ctrlp-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
+" ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 " delimitMate: https://github.com/Raimondi/delimitMate.git
 " endwise-vim: https://github.com/tpope/vim-endwise
 " fugitive: https://github.com/tpope/vim-fugitive
@@ -16,7 +16,9 @@ execute pathogen#infect()
 " solarized: https://github.com/altercation/vim-colors-solarized
 " vim-airline: https://github.com/bling/vim-airline
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
+" vim-go: https://github.com/fatih/vim-go.git
 " vim-quickrun: https://github.com/thinca/vim-quickrun
+" vim-scala: https://github.com/derekwyatt/vim-scala
 " youcompleteme: https://github.com/Valloric/YouCompleteMe
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,6 +146,10 @@ if executable('ag')
 
   " use ag in ctrlp for listing files. lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore .git -g ""'
+
+  " ag is fast enough that we don't need to cache
+  let g:ctrlp_use_caching = 0
+
 endif
 
 " use ctrl-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
