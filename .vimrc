@@ -127,9 +127,9 @@ let g:indentLine_char = '¦'
 
 let g:promptline_preset = {
   \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
-  \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)'],
-  \'c' : [ promptline#slices#python_virtualenv() ],
-  \'x' : [ '$(date +"%H:%M:%S")'],
+  \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)' ],
+  \'c' : [ promptline#slices#python_virtualenv(), '$GOENV' ],
+  \'x' : [ '$(date +"%H:%M:%S")' ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
 
 " close the ycm preview window after insertion or completion
