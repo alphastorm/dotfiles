@@ -165,6 +165,9 @@ let g:ctrlp_lazy_update = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" disable colorcolumn for golang
+autocmd BufRead *.go set cc=0
+
 " .md files are markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
@@ -175,8 +178,8 @@ autocmd BufRead,BufNewFile *.hql set filetype=sql
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-" prefer 2 space indent for python over PEP8
-autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
+" prefer 2 space indent for python over PEP8: disabled for uber
+" autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STRIP TRAILING WHITESPACE
