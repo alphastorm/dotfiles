@@ -166,7 +166,7 @@ let g:ctrlp_lazy_update = 1
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " disable colorcolumn for golang
-autocmd BufRead *.go set cc=0
+autocmd BufRead *.go setl cc=0
 
 " .md files are markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
