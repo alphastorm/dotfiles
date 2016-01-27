@@ -1,9 +1,11 @@
 [user]
 	name = Sunil Srivatsa
-
-[push]
-	default = simple
-
+[branch]
+	autosetuprebase = always
+[rerere]
+	enabled = true
 [alias]
-  r = !GIT_NO_PAGER=1 git l -30
-  l = "!source ~/.githelpers && pretty_git_log"
+	r = !GIT_NO_PAGER=1 git l -30
+	l = "!source ~/.githelpers && pretty_git_log"
+[push]
+	default = current
