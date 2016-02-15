@@ -14,6 +14,7 @@ execute pathogen#infect()
 " nerdcommenter: https://github.com/scrooloose/nerdcommenter
 " promptline: https://github.com/edkolev/promptline.vim
 " solarized: https://github.com/altercation/vim-colors-solarized
+" vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
 " vim-airline: https://github.com/bling/vim-airline
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
 " vim-go: https://github.com/fatih/vim-go.git
