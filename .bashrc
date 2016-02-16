@@ -31,6 +31,9 @@ alias gum="echo 'Resetting master to the latest origin/master...' && git fetch &
 export EDITOR='vim'
 export VISUAL='vim'
 
+# better mysql prompt
+export MYSQL_PS1="\D | \U [\d]> "
+
 # use vim bindings in the shell
 set -o vi
 
