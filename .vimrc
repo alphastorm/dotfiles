@@ -19,6 +19,7 @@ execute pathogen#infect()
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
 " vim-go: https://github.com/fatih/vim-go.git
 " vim-javascript: https://github.com/pangloss/vim-javascript.git
+" vim-json: https://github.com/elzr/vim-json.git
 " vim-quickrun: https://github.com/thinca/vim-quickrun
 " vim-scala: https://github.com/derekwyatt/vim-scala
 " youcompleteme: https://github.com/Valloric/YouCompleteMe
@@ -126,6 +127,9 @@ noremap k gk
 let g:airline_powerline_fonts = 1
 
 let g:indentLine_char = '¦'
+
+" disable concealing of double quotes
+let g:vim_json_syntax_conceal = 0
 
 let g:promptline_preset = {
   \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
