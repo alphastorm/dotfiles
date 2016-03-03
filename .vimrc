@@ -14,6 +14,7 @@ execute pathogen#infect()
 " nerdcommenter: https://github.com/scrooloose/nerdcommenter
 " promptline: https://github.com/edkolev/promptline.vim
 " solarized: https://github.com/altercation/vim-colors-solarized
+" syntastic: https://github.com/scrooloose/syntastic.git
 " vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
 " vim-airline: https://github.com/bling/vim-airline
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
@@ -125,6 +126,16 @@ noremap k gk
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+
+" syntastic settings
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': ['javascript'],
+      \ 'passive_filetypes': [] }
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:indentLine_char = '¦'
 
