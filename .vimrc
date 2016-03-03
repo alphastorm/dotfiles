@@ -92,6 +92,7 @@ highlight ColorColumn ctermbg=gray
 let mapleader = "\<Space>"
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>b :Gblame<CR>
+nnoremap <leader>e :lnext<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>r :QuickRun<CR>
 nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
