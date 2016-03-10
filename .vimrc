@@ -129,7 +129,7 @@ noremap k gk
 let g:airline_powerline_fonts = 1
 
 " syntastic settings
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
       \ 'active_filetypes': ['javascript'],
       \ 'passive_filetypes': [] }
 let g:syntastic_javascript_checkers = ['eslint']
