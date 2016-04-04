@@ -32,7 +32,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 # better mysql prompt
-export MYSQL_PS1="\D | \U [\d]> "
+export MYSQL_PS1="\D | \u@\h [\d]> "
 
 # use vim bindings in the shell
 set -o vi
