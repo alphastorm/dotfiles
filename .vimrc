@@ -21,6 +21,7 @@ execute pathogen#infect()
 " vim-go: https://github.com/fatih/vim-go.git
 " vim-javascript: https://github.com/pangloss/vim-javascript.git
 " vim-json: https://github.com/elzr/vim-json.git
+" vim-puppet: https://github.com/rodjek/vim-puppet.git
 " vim-quickrun: https://github.com/thinca/vim-quickrun
 " vim-scala: https://github.com/derekwyatt/vim-scala
 " youcompleteme: https://github.com/Valloric/YouCompleteMe
