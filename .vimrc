@@ -11,6 +11,7 @@ execute pathogen#infect()
 " endwise-vim: https://github.com/tpope/vim-endwise
 " fugitive: https://github.com/tpope/vim-fugitive
 " indentLine: https://github.com/Yggdroot/indentLine
+" javascript-libraries-syntax: https://github.com/othree/javascript-libraries-syntax.vim
 " nerdcommenter: https://github.com/scrooloose/nerdcommenter
 " promptline: https://github.com/edkolev/promptline.vim
 " solarized: https://github.com/altercation/vim-colors-solarized
@@ -19,6 +20,7 @@ execute pathogen#infect()
 " vim-airline: https://github.com/bling/vim-airline
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
 " vim-go: https://github.com/fatih/vim-go.git
+" vim-javascript-syntax: https://github.com/jelera/vim-javascript-syntax
 " vim-javascript: https://github.com/pangloss/vim-javascript.git
 " vim-json: https://github.com/elzr/vim-json.git
 " vim-puppet: https://github.com/rodjek/vim-puppet.git
@@ -129,6 +131,9 @@ noremap k gk
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
+" set javascript-libraries-syntax used libraries
+let g:used_javascript_libs = 'flux,react,underscore'
+
 " syntastic settings
 let g:syntastic_mode_map = { 'mode': 'passive',
       \ 'active_filetypes': ['javascript'],
@@ -164,7 +169,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " use ag in ctrlp for listing files. lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore .git -g ""'
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 
   " ag is fast enough that we don't need to cache
   let g:ctrlp_use_caching = 0
