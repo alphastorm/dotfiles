@@ -23,6 +23,7 @@ execute pathogen#infect()
 " vim-javascript-syntax: https://github.com/jelera/vim-javascript-syntax
 " vim-javascript: https://github.com/pangloss/vim-javascript.git
 " vim-json: https://github.com/elzr/vim-json.git
+" vim-markdown: https://github.com/plasticboy/vim-markdown
 " vim-puppet: https://github.com/rodjek/vim-puppet.git
 " vim-quickrun: https://github.com/thinca/vim-quickrun
 " vim-scala: https://github.com/derekwyatt/vim-scala
@@ -149,6 +150,8 @@ let g:indentLine_char = '¦'
 " disable concealing of double quotes
 let g:vim_json_syntax_conceal = 0
 
+let g:vim_markdown_folding_disabled = 1
+
 let g:promptline_preset = {
   \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
   \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)' ],
@@ -188,10 +191,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " disable colorcolumn for golang
 autocmd BufRead *.go setl cc=0
-
-" .md files are markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.md set spell
 
 " .hql files are SQL
 autocmd BufRead,BufNewFile *.hql set filetype=sql
