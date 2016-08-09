@@ -189,17 +189,28 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" disable colorcolumn for golang
-autocmd BufRead *.go setl cc=0
+augroup vimrcEx
+  " clear all autocmds in the group
+  autocmd!
 
-" .hql files are SQL
-autocmd BufRead,BufNewFile *.hql set filetype=sql
+  " jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+  " disable colorcolumn for golang
+  autocmd BufRead *.go setl cc=0
 
-" prefer 2 space indent for python over PEP8: disabled for uber
-" autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
+  " .hql files are SQL
+  autocmd BufRead,BufNewFile *.hql set filetype=sql
+
+  " automatically rebalance windows on vim resize
+  autocmd VimResized * :wincmd =
+
+  " prefer 2 space indent for python over PEP8: disabled for uber
+  " autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STRIP TRAILING WHITESPACE
