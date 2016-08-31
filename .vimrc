@@ -137,7 +137,7 @@ let g:used_javascript_libs = 'flux,react,underscore'
 
 " syntastic settings
 let g:syntastic_mode_map = { 'mode': 'passive',
-      \ 'active_filetypes': ['javascript'],
+      \ 'active_filetypes': ['javascript', 'sh'],
       \ 'passive_filetypes': [] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1

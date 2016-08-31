@@ -23,6 +23,7 @@ csshx
 diff-so-fancy
 httpie
 macvim --with-override-system-vim
+shellcheck
 the_silver_searcher
 wget
 zsh
