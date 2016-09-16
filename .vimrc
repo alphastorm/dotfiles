@@ -5,6 +5,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
 
+" ack.vim: https://github.com/mileszs/ack.vim.git
 " ctrlp-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
 " ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 " delimitMate: https://github.com/Raimondi/delimitMate.git
@@ -95,6 +96,7 @@ highlight ColorColumn ctermbg=gray
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 nnoremap <leader><leader> <C-^>
+nnoremap <Leader>a :Ack<CR>
 nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>e :lnext<CR>
 nnoremap <leader>h :noh<CR>
@@ -131,6 +133,11 @@ noremap k gk
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+
+" for using ag with ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " set javascript-libraries-syntax used libraries
 let g:used_javascript_libs = 'flux,react,underscore'
