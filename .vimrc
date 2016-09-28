@@ -134,11 +134,6 @@ noremap k gk
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
-" for using ag with ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 " set javascript-libraries-syntax used libraries
 let g:used_javascript_libs = 'flux,react,underscore'
 
@@ -175,8 +170,11 @@ highlight clear SignColumn
 
 " use the silver searcher: https://github.com/ggreer/the_silver_searcher
 if executable('ag')
-  "use Ag over Grep
+  "use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " for using ag with ack.vim
+  let g:ackprg = 'ag --vimgrep'
 
   " use ag in ctrlp for listing files. lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
