@@ -152,6 +152,8 @@ let g:indentLine_char = '¦'
 " disable concealing of double quotes
 let g:vim_json_syntax_conceal = 0
 
+" disable conealing and folding with markdown
+let g:vim_markdown_conceal = 0
 let g:vim_markdown_folding_disabled = 1
 
 let g:promptline_preset = {
