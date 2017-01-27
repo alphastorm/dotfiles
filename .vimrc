@@ -52,6 +52,12 @@ set t_ti= t_te=
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 set pastetoggle=<F6>
 
+" delete comment character when joining commented lines
+" https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
+
 set autoindent        " copy the indent from the previous line
 set autoread          " reload files when changed on disk, i.e. via git checkout
 set cc=81             " highlight the 81st column
