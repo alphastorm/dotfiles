@@ -65,6 +65,7 @@ set hlsearch          " highlight all search matches
 set ignorecase        " case-insensitive search
 set incsearch         " search as you type
 set laststatus=2      " always display the status line
+set lazyredraw        " enable lazy redrawing
 set nowrap            " disable wrapping
 set number            " line numbers
 set ruler             " displays the current cursor position
