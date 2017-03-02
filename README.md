@@ -22,7 +22,8 @@ my dotfiles and configuration stuff.
 csshx
 diff-so-fancy
 httpie
-macvim --with-override-system-vim
+jq
+macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
 shellcheck
 the_silver_searcher
 wget
