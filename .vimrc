@@ -6,6 +6,7 @@
 execute pathogen#infect()
 
 " ack.vim: https://github.com/mileszs/ack.vim.git
+" ale: https://github.com/w0rp/ale
 " ctrlp-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
 " ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 " delimitMate: https://github.com/Raimondi/delimitMate.git
@@ -16,7 +17,6 @@ execute pathogen#infect()
 " nerdcommenter: https://github.com/scrooloose/nerdcommenter
 " promptline: https://github.com/edkolev/promptline.vim
 " solarized: https://github.com/altercation/vim-colors-solarized
-" syntastic: https://github.com/scrooloose/syntastic.git
 " vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
 " vim-airline: https://github.com/bling/vim-airline
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
@@ -142,15 +142,20 @@ let g:airline_powerline_fonts = 1
 " set javascript-libraries-syntax used libraries
 let g:used_javascript_libs = 'flux,react,underscore'
 
-" syntastic settings
-let g:syntastic_mode_map = { 'mode': 'passive',
-      \ 'active_filetypes': ['javascript', 'sh'],
-      \ 'passive_filetypes': [] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" ale settings
+let g:ale_linters = {
+      \   'python': [],
+      \}
+let g:ale_statusline_format = ['%d ✗', '%d ⚠', '']
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_open_list = 1
+
+function ALE() abort
+  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : ''
+endfunction
+let g:airline_section_error = '%{ALE()}'
+let g:airline_section_warning = ''
+let g:airline_skip_empty_sections = 1
 
 let g:indentLine_char = '¦'
 
