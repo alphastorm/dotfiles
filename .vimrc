@@ -225,6 +225,9 @@ augroup vimrcEx
   " automatically rebalance windows on vim resize
   autocmd VimResized * :wincmd =
 
+  " close the quickfix / location list if it is the last window open
+  autocmd WinEnter * if &buftype ==# 'quickfix' && winnr('$') == 1 | quit | endif
+
   " prefer 2 space indent for python over PEP8: disabled for uber
   " autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
 augroup END
