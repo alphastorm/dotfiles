@@ -210,9 +210,10 @@ augroup vimrcEx
   " clear all autocmds in the group
   autocmd!
 
-  " jump to last cursor position unless it's invalid or in an event handler
+  " jump to last cursor position unless it's invalid, in an event handler, or a
+  " git commit message
   autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \ if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
 
