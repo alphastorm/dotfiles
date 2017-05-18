@@ -19,6 +19,7 @@ execute pathogen#infect()
 " solarized: https://github.com/altercation/vim-colors-solarized
 " vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
 " vim-airline: https://github.com/bling/vim-airline
+" vim-dispatch: https://github.com/tpope/vim-dispatch
 " vim-gitgutter: https://github.com/airblade/vim-gitgutter
 " vim-go: https://github.com/fatih/vim-go.git
 " vim-javascript-syntax: https://github.com/jelera/vim-javascript-syntax
@@ -138,6 +139,9 @@ noremap k gk
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+
+" enable background search execution with vim-dispatch
+let g:ack_use_dispatch = 1
 
 " set javascript-libraries-syntax used libraries
 let g:used_javascript_libs = 'flux,react,underscore'
