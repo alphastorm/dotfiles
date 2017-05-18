@@ -135,12 +135,15 @@ nnoremap <C-H> <C-W><C-H>
 noremap j gj
 noremap k gk
 
+" toggle [i]nvisible characters
+nmap <leader>i :set list!<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
-" enable background search execution with vim-dispatch
+" enable background search execution with vim-dispatch for ack.vim
 let g:ack_use_dispatch = 1
 
 " set javascript-libraries-syntax used libraries
