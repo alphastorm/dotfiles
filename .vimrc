@@ -15,6 +15,8 @@ execute pathogen#infect()
 " indentLine: https://github.com/Yggdroot/indentLine
 " javascript-libraries-syntax: https://github.com/othree/javascript-libraries-syntax.vim
 " nerdcommenter: https://github.com/scrooloose/nerdcommenter
+" nerdtree-git-plugin: https://github.com/Xuyuanp/nerdtree-git-plugin
+" nerdtree: https://github.com/scrooloose/nerdtree
 " promptline: https://github.com/edkolev/promptline.vim
 " solarized: https://github.com/altercation/vim-colors-solarized
 " vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
@@ -107,6 +109,7 @@ nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>e :lnext<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>r :QuickRun<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
 
 " disable arrow keys
