@@ -7,7 +7,7 @@ execute pathogen#infect()
 
 " ack.vim: https://github.com/mileszs/ack.vim.git
 " ale: https://github.com/w0rp/ale
-" ctrlp-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
+" cpsm: https://github.com/nixprime/cpsm
 " ctrlp: https://github.com/ctrlpvim/ctrlp.vim
 " delimitMate: https://github.com/Raimondi/delimitMate.git
 " endwise-vim: https://github.com/tpope/vim-endwise
@@ -203,15 +203,10 @@ if executable('ag')
 
   " ag is fast enough that we don't need to cache
   let g:ctrlp_use_caching = 0
-
 endif
 
-" use ctrl-py-matcher: https://github.com/FelikZ/ctrlp-py-matcher
-if !has('python')
-  echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
+" use cpsm, a CtrlP matcher, specialized for paths
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
