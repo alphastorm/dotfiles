@@ -1,46 +1,53 @@
-" This is Sunil Srivatsa's .vimrc file
+" this is sunil srivatsa's .vimrc file
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PATHOGEN
+" VIM-PLUG (https://github.com/junegunn/vim-plug)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
 
-" ack.vim: https://github.com/mileszs/ack.vim.git
-" ale: https://github.com/w0rp/ale
-" cpsm: https://github.com/nixprime/cpsm
-" ctrlp: https://github.com/ctrlpvim/ctrlp.vim
-" delimitMate: https://github.com/Raimondi/delimitMate.git
-" endwise-vim: https://github.com/tpope/vim-endwise
-" fugitive: https://github.com/tpope/vim-fugitive
-" indentLine: https://github.com/Yggdroot/indentLine
-" javascript-libraries-syntax: https://github.com/othree/javascript-libraries-syntax.vim
-" nerdcommenter: https://github.com/scrooloose/nerdcommenter
-" nerdtree-git-plugin: https://github.com/Xuyuanp/nerdtree-git-plugin
-" nerdtree: https://github.com/scrooloose/nerdtree
-" promptline: https://github.com/edkolev/promptline.vim
-" solarized: https://github.com/altercation/vim-colors-solarized
-" vim-airline-themes: https://github.com/vim-airline/vim-airline-themes
-" vim-airline: https://github.com/bling/vim-airline
-" vim-dispatch: https://github.com/tpope/vim-dispatch
-" vim-gitgutter: https://github.com/airblade/vim-gitgutter
-" vim-go: https://github.com/fatih/vim-go.git
-" vim-javascript-syntax: https://github.com/jelera/vim-javascript-syntax
-" vim-javascript: https://github.com/pangloss/vim-javascript.git
-" vim-json: https://github.com/elzr/vim-json.git
-" vim-markdown: https://github.com/plasticboy/vim-markdown
-" vim-quickrun: https://github.com/thinca/vim-quickrun
-" youcompleteme: https://github.com/Valloric/YouCompleteMe
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'edkolev/promptline.vim'
+Plug 'elzr/vim-json', { 'for': ['js', 'json'] }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'nixprime/cpsm', { 'do': 'PY3=OFF ./install.sh' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'js' }
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
+Plug 'plasticboy/vim-markdown', { 'for': 'md' }
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'thinca/vim-quickrun', { 'on': 'QuickRun' }
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'yggdroot/indentline'
+
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --gocode-completer --tern-completer
+  endif
+endfunction
+
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-
-" enable syntax highlighting
-syntax on
-
-" turn filetype detection, indent scripts, and filetype plugins on
-filetype plugin indent on
 
 " 2 space tabs
 set tabstop=2
@@ -99,6 +106,9 @@ match ExtraWhitespace /\s\+$/
 " change the 81st col to be gray
 highlight ColorColumn ctermbg=gray
 
+" clear background for vim-gitgutter
+highlight clear SignColumn
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,37 +154,23 @@ nmap <leader>i :set list!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-
 " enable background search execution with vim-dispatch for ack.vim
 let g:ack_use_dispatch = 1
 
-" set javascript-libraries-syntax used libraries
-let g:used_javascript_libs = 'flux,react,underscore'
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 
 " ale settings
 let g:ale_linters = {
       \   'python': [],
       \}
-let g:ale_statusline_format = ['%d ✗', '%d ⚠', '']
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_open_list = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-function ALE() abort
-  return exists('*ALEGetStatusLine') ? ALEGetStatusLine() : ''
-endfunction
-let g:airline_section_error = '%{ALE()}'
-let g:airline_section_warning = ''
-let g:airline_skip_empty_sections = 1
+" use cpsm, a CtrlP matcher, specialized for paths
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 let g:indentLine_char = '¦'
-
-" disable concealing of double quotes
-let g:vim_json_syntax_conceal = 0
-
-" disable conealing and folding with markdown
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_folding_disabled = 1
 
 let g:promptline_preset = {
   \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
@@ -183,12 +179,19 @@ let g:promptline_preset = {
   \'x' : [ '$(date +"%H:%M:%S")' ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
 
+" set javascript-libraries-syntax used libraries
+let g:used_javascript_libs = 'flux,react,underscore'
+
+" disable concealing of double quotes
+let g:vim_json_syntax_conceal = 0
+
+" disable conealing and folding with markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 1
+
 " close the ycm preview window after insertion or completion
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-" clear background for vim-gitgutter
-highlight clear SignColumn
 
 " use the silver searcher: https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -204,9 +207,6 @@ if executable('ag')
   " ag is fast enough that we don't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" use cpsm, a CtrlP matcher, specialized for paths
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
