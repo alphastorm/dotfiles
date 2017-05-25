@@ -10,7 +10,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/promptline.vim'
-Plug 'elzr/vim-json', { 'for': ['js', 'json'] }
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
