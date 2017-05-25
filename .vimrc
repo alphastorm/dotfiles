@@ -8,13 +8,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-Plug 'nixprime/cpsm', { 'do': 'PY3=OFF ./install.sh' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -120,7 +120,7 @@ nnoremap <leader>e :lnext<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>r :QuickRun<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>w <C-w>v<C-w>l:CtrlP<CR>
+nnoremap <leader>w <C-w>v<C-w>l:Files<CR>
 
 " disable arrow keys
 nnoremap <up> <nop>
@@ -151,6 +151,9 @@ noremap k gk
 " toggle [i]nvisible characters
 nmap <leader>i :set list!<CR>
 
+" search with fzf
+nmap <C-P> :Files<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -166,9 +169,6 @@ let g:ale_linters = {
       \}
 let g:ale_open_list = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" use cpsm, a CtrlP matcher, specialized for paths
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 
 let g:indentLine_char = '¦'
 
@@ -193,19 +193,13 @@ let g:vim_markdown_folding_disabled = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-" use the silver searcher: https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  "use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" use ripgrep
+if executable('rg')
+  "use rg over grep
+  set grepprg=rg\ --vimgrep
 
-  " for using ag with ack.vim
-  let g:ackprg = 'ag --vimgrep'
-
-  " use ag in ctrlp for listing files. lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
-
-  " ag is fast enough that we don't need to cache
-  let g:ctrlp_use_caching = 0
+  " for using rg with ack.vim
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -25,7 +25,13 @@ httpie
 jq
 macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
 shellcheck
-the_silver_searcher
 wget
 zsh
+```
+
+### ripgrep
+
+```
+brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
+brew install burntsushi/ripgrep/ripgrep-bin
 ```
