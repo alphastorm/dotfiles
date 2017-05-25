@@ -21,6 +21,7 @@ my dotfiles and configuration stuff.
 ```
 csshx
 diff-so-fancy
+fzf
 httpie
 jq
 macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python

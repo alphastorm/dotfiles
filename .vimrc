@@ -12,7 +12,6 @@ Plug 'edkolev/promptline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
