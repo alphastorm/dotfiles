@@ -12,12 +12,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'js' }
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'nixprime/cpsm', { 'do': 'PY3=OFF ./install.sh' }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'js' }
-Plug 'pangloss/vim-javascript', { 'for': 'js' }
-Plug 'plasticboy/vim-markdown', { 'for': 'md' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
