@@ -27,6 +27,7 @@ jq
 macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
 shellcheck
 wget
+z
 zsh
 ```
 
