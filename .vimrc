@@ -9,6 +9,7 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
+Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
@@ -39,7 +40,7 @@ function! BuildYCM(info)
   endif
 endfunction
 
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'valloric/youcompleteme', { 'do': function('BuildYCM') }
 
 call plug#end()
 
@@ -218,7 +219,7 @@ augroup vimrcEx
   " disable colorcolumn for golang
   autocmd BufRead *.go setl cc=0
 
-  " .hql files are SQL
+  " .hql files are sql
   autocmd BufRead,BufNewFile *.hql set filetype=sql
 
   " automatically rebalance windows on vim resize
@@ -227,7 +228,7 @@ augroup vimrcEx
   " close the quickfix / location list if it is the last window open
   autocmd WinEnter * if &buftype ==# 'quickfix' && winnr('$') == 1 | quit | endif
 
-  " prefer 2 space indent for python over PEP8: disabled for uber
+  " prefer 2 space indent for python over pep8: disabled for uber
   " autocmd FileType python setl tabstop=2 shiftwidth=2 softtabstop=2
 augroup END
 
