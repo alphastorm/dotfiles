@@ -1,15 +1,15 @@
 [user]
-	name = Sunil Srivatsa
+  name = Sunil Srivatsa
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [rerere]
-	enabled = true
+  enabled = true
 [alias]
-	r = !GIT_NO_PAGER=1 git l -30
-	l = "!source ~/.githelpers && pretty_git_log"
+  l = "!source ~/.githelpers && pretty_git_log"
+  r = !GIT_NO_PAGER=1 git l -30
+  patch = !git --no-pager diff --no-color
+[core]
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
-	default = current
-	followTags = true
-[pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+  default = current
+  followTags = true
