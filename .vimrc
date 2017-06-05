@@ -54,10 +54,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-" prevent vim from clobbering the scrollback buffer
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
-
 " toggle paste for pasting unmodified text
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 set pastetoggle=<F6>
