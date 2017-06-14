@@ -14,7 +14,7 @@ Plug 'edkolev/promptline.vim'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'mileszs/ack.vim'
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
