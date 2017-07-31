@@ -12,7 +12,7 @@ my dotfiles and configuration stuff.
 
 ## font
 
-[Inconsolata-g for Powerline](https://github.com/powerline/fonts/tree/master/Inconsolata-g)
+[inconsolata-g for powerline](https://github.com/powerline/fonts/tree/master/inconsolata-g)
 
 ## homebrew
 
@@ -25,7 +25,7 @@ diff-so-fancy
 fzf
 httpie
 jq
-macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
+macvim --with-override-system-vim
 shellcheck
 wget
 z
@@ -33,6 +33,10 @@ zsh
 ```
 
 ### ripgrep
+
+homebrew-core's version is compiled with rust stable and no SIMD.  install a
+binary compiled with rust nightly (including SIMD and all optimizations) by
+utilizing a custom tap:
 
 ```
 brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
