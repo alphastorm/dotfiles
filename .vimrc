@@ -165,6 +165,7 @@ let g:ale_linters = {
       \}
 let g:ale_open_list = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_delay = 1000
 
 let g:indentLine_char = '¦'
 
