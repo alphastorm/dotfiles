@@ -43,7 +43,7 @@ ANSI_WHITE_BOLD='\033[0;37;1m'
 ANSI_RESET='\033[0m'
 
 pretty_git_log() {
-  git log --graph --pretty="tformat:${FORMAT}" $* |
+  git log --graph --color=always --pretty="tformat:${FORMAT}" $* |
     # Replace (2 years ago) with (2 years)
     sed -Ee 's/(^[^<]*) ago\)/\1)/' |
     # Replace (2 years, 5 months) with (2 years)
