@@ -11,16 +11,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
-Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mileszs/ack.vim'
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
 Plug 'thinca/vim-quickrun', { 'on': 'QuickRun' }
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -175,9 +171,6 @@ let g:promptline_preset = {
   \'c' : [ promptline#slices#python_virtualenv(), '$GOENV' ],
   \'x' : [ '$(date +"%H:%M:%S")' ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
-
-" set javascript-libraries-syntax used libraries
-let g:used_javascript_libs = 'flux,react,underscore'
 
 " disable concealing of double quotes
 let g:vim_json_syntax_conceal = 0
