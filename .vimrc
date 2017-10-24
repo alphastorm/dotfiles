@@ -11,7 +11,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
