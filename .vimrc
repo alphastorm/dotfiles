@@ -9,7 +9,6 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/promptline.vim'
 Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoInstallBinaries' }
 Plug 'mileszs/ack.vim'
@@ -106,7 +105,7 @@ highlight clear SignColumn
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 nnoremap <leader><leader> <C-^>
-nnoremap <Leader>a :Ack<CR>
+nnoremap <leader>a :Ack<CR>
 nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>e :lnext<CR>
 nnoremap <leader>h :noh<CR>
