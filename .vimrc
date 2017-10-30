@@ -170,9 +170,10 @@ let g:gitgutter_sign_modified_removed = '∙'
 
 let g:indentLine_char = '¦'
 
+let g:promptline_theme = 'airline'
 let g:promptline_preset = {
   \'a' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
-  \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)' ],
+  \'b' : [ promptline#slices#vcs_branch(), '$(git rev-parse --short HEAD 2>/dev/null)', promptline#slices#git_status() ],
   \'c' : [ promptline#slices#python_virtualenv(), '$GOENV' ],
   \'x' : [ '$(date +"%H:%M:%S")' ],
   \'warn' : [ promptline#slices#last_exit_code() ]}
