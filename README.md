@@ -12,7 +12,7 @@ my dotfiles and configuration stuff.
 
 ## font
 
-[inconsolata-g for powerline](https://github.com/powerline/fonts/tree/master/inconsolata-g)
+[Inconsolata-g for powerline](https://github.com/powerline/fonts/tree/master/Inconsolata-g)
 
 ## homebrew
 
