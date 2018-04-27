@@ -19,6 +19,7 @@ my dotfiles and configuration stuff.
 [homebrew](http://brew.sh/)
 
 ```
+cmake
 coreutils
 csshx
 diff-so-fancy
