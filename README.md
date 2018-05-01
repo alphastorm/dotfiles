@@ -33,6 +33,14 @@ z
 zsh
 ```
 
+### fzf
+
+install useful key bindings and fuzzy completion:
+
+```
+$(brew --prefix)/opt/fzf/install
+```
+
 ### ripgrep
 
 homebrew-core's version is compiled with rust stable and no SIMD.  install a
