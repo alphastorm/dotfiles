@@ -97,9 +97,6 @@ match ExtraWhitespace /\s\+$/
 " change the 81st col to be gray
 highlight ColorColumn ctermbg=gray
 
-" clear background for vim-gitgutter
-highlight clear SignColumn
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,6 +158,9 @@ let g:ale_linters = {
 let g:ale_open_list = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 1000
+
+" gitgutter update after 100ms delay
+set updatetime=100
 
 " gitgutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
