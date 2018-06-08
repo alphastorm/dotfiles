@@ -159,9 +159,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
 " ale settings
-let g:ale_linters = {
-      \   'python': [],
-      \}
 let g:ale_open_list = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_delay = 1000
@@ -198,7 +195,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " use ripgrep
 if executable('rg')
-  "use rg over grep
+  " use rg over grep
   set grepprg=rg\ --vimgrep
 
   " for using rg with ack.vim
