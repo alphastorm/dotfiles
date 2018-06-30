@@ -39,7 +39,7 @@ function! BuildYCM(info)
   " - status: 'installed', 'updated', or 'unchanged'
   " - force:  set on PlugInstall! or PlugUpdate!
   if a:info.status == 'installed' || a:info.force
-    !./install.py --gocode-completer --tern-completer
+    !./install.py --go-completer --js-completer
   endif
 endfunction
 

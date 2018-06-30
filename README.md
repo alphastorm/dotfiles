@@ -26,7 +26,7 @@ diff-so-fancy
 fzf
 httpie
 jq
-macvim --with-override-system-vim
+macvim --with-override-system-vim --with-python@2
 shellcheck
 wget
 z
