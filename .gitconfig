@@ -1,5 +1,7 @@
 [user]
   name = Sunil Srivatsa
+  email = sunilsrivatsa@gmail.com
+  signingkey = 235DE76E36B33C14
 [branch]
   autosetuprebase = always
 [rerere]
@@ -13,3 +15,5 @@
 [push]
   default = current
   followTags = true
+[commit]
+  gpgsign = true
