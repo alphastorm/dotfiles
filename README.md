@@ -24,6 +24,7 @@ coreutils
 csshx
 diff-so-fancy
 fzf
+gpg
 httpie
 jq
 macvim --with-override-system-vim --with-python@2
@@ -39,6 +40,14 @@ install useful key bindings and fuzzy completion:
 
 ```
 $(brew --prefix)/opt/fzf/install
+```
+
+### keybase
+
+install keybase using a cask:
+
+```
+brew cask install keybase
 ```
 
 ### ripgrep
