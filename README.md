@@ -27,7 +27,7 @@ fzf
 gpg
 httpie
 jq
-macvim --with-override-system-vim --with-python@2
+macvim --with-override-system-vim
 pinentry-mac
 shellcheck
 wget
